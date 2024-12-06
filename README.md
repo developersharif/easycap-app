@@ -12,6 +12,7 @@ Welcome to **EasyCap**, your ultimate desktop screen recorder and screenshot edi
 Whether you're creating tutorials, recording gameplay, or capturing important moments, EasyCap makes it effortless.  
 
 ---
+https://easycap.realbrain.cc/
 
 ## 🚀 Features  
 
