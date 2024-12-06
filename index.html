@@ -17,6 +17,10 @@
         .gradient-overlay {
             background: linear-gradient(135deg, #1A3B5C 0%, #2C5F8D 100%);
         }
+        .form-input {
+            color: #1A3B5C;
+            border: 2px solid #1A3B5C;
+        }
     </style>
 </head>
 <body class="flex items-center justify-center min-h-screen">
@@ -24,12 +28,31 @@
         <h1 class="text-4xl font-bold mb-6 text-white">EasyCap</h1>
         <h2 class="text-3xl mb-4 text-white">Screen Recorder & Screenshot Tool</h2>
         <p class="text-xl mb-8 text-gray-200">Capture your screen with unprecedented ease and quality. Coming soon!</p>
-        <div class="flex justify-center space-x-4">
-            <input type="email" placeholder="Get notified when we launch" class="px-4 py-2 rounded-lg w-64 text-gray-800">
-            <button class="bg-white text-brand-blue px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
-                Notify Me
+        
+        <form 
+            action="https://formspree.io/f/xvgoyjlb" 
+            method="POST" 
+            class="flex flex-col items-center space-y-4"
+        >
+            <input 
+                type="email" 
+                name="email" 
+                placeholder="Enter your email" 
+                required 
+                class="px-4 py-2 rounded-lg w-full max-w-md form-input"
+            >
+            <textarea 
+                name="message" 
+                placeholder="Optional: Tell us what features you're most excited about" 
+                class="px-4 py-2 rounded-lg w-full max-w-md form-input h-24"
+            ></textarea>
+            <button 
+                type="submit" 
+                class="bg-blue-500 text-brand-blue px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
+            >
+                Get Early Access
             </button>
-        </div>
+        </form>
     </div>
 </body>
 </html>
