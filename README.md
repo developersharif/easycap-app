@@ -29,8 +29,8 @@ As a developer passionate about creating tools that balance simplicity with powe
 
 ---
 
-Release Date: End of December 2024
 
+Download link: https://buymeacoffee.com/developersharif/e/345246
  
 
 ## Authors
