@@ -1,58 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyCap - Screen Recording Reimagined</title>
+    <title>EasyCap - #1 Professional Screen Recording & Screenshot Software 2025</title>
+    <!-- Enhanced meta descriptions for better SEO -->
+    <meta name="description"
+        content="Transform your screen recording experience with EasyCap - The fastest, most secure screen recorder for Windows. Features include instant capture, smart editing tools, and zero lag recording. Try free now!">
+    <meta name="keywords"
+        content="screen recorder windows, screenshot tool, video capture software, screen recording app 2025, professional screen recorder, easy screen capture, lightweight screen recording">
+    <meta name="author" content="developersharif">
+
+    <!-- Enhanced Open Graph tags for better social sharing -->
+    <meta property="og:title" content="EasyCap - Transform Your Screen Recording Experience">
+    <meta property="og:description"
+        content="Professional screen recording made simple. Zero lag, instant capture, smart editing tools. Perfect for content creators, educators & professionals.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/easycap.png">
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EasyCap - Professional Screen Recording Made Simple">
+    <meta name="twitter:description"
+        content="Zero lag screen recording with smart editing tools. Perfect for content creators & professionals.">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
     <style>
         body {
             background-color: #f4f7ff;
             font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
+
         .brand-blue {
             background-color: #1A3B5C;
             color: white;
         }
+
         .gradient-overlay {
             background: linear-gradient(135deg, #1A3B5C 0%, #2C5F8D 100%);
         }
-        .form-input {
+
+        .feature-icon {
             color: #1A3B5C;
-            border: 2px solid #1A3B5C;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Added animations */
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+
+        /* Added floating animation */
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Added scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #3b82f6;
+            z-index: 9999;
+        }
+
+        .text-brand-blue {
+            color: #1A3B5C;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.show {
+            transform: translateY(0);
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            background: #f3f4f6;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu {
+                display: none !important;
+            }
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen">
-    <div class="text-center p-8 rounded-xl shadow-2xl brand-blue gradient-overlay w-full max-w-2xl mx-4">
-        <h1 class="text-4xl font-bold mb-6 text-white">EasyCap</h1>
-        <h2 class="text-3xl mb-4 text-white">Screen Recorder & Screenshot Tool</h2>
-        <p class="text-xl mb-8 text-gray-200">Capture your screen with unprecedented ease and quality. Coming soon!</p>
-        
-        <form 
-            action="https://formspree.io/f/xvgoyjlb" 
-            method="POST" 
-            class="flex flex-col items-center space-y-4"
-        >
-            <input 
-                type="email" 
-                name="email" 
-                placeholder="Enter your email" 
-                required 
-                class="px-4 py-2 rounded-lg w-full max-w-md form-input"
-            >
-            <textarea 
-                name="message" 
-                placeholder="Optional: Tell us what features you're most excited about" 
-                class="px-4 py-2 rounded-lg w-full max-w-md form-input h-24"
-            ></textarea>
-            <button 
-                type="submit" 
-                class="bg-blue-500 text-brand-blue px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
-            >
-                Get Early Access
+
+<body class="flex flex-col items-center justify-center min-h-screen">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+
+    <header class="w-full py-4 bg-white shadow-md fixed top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center hover-scale">
+                <img src="assets/images/logo.png" alt="EasyCap Logo" class="mr-2 w-10 h-10">
+                <a href="/">
+                    <h1 class="text-2xl font-bold text-brand-blue">EasyCap</h1>
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#features" class="text-brand-blue hover:text-blue-700 transition-colors">Features</a>
+                <a href="#how-it-works" class="text-brand-blue hover:text-blue-700 transition-colors">How It Works</a>
+                <a href="#testimonials" class="text-brand-blue hover:text-blue-700 transition-colors">Reviews</a>
+                <div class="flex space-x-3">
+                    <a href="https://buymeacoffee.com/developersharif/e/345246"
+                        class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 hover-scale">
+                        <i class="fa-brands fa-windows"></i> Download Free
+                    </a>
+                </div>
+            </nav>
+            <button class="md:hidden text-brand-blue p-2" id="mobileMenuButton" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars text-2xl"></i>
             </button>
-        </form>
+        </div>
+
+
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="flex flex-col space-y-2">
+                <a href="#features" class="text-brand-blue hover:text-blue-700">Features</a>
+                <a href="#how-it-works" class="text-brand-blue hover:text-blue-700">How It Works</a>
+                <a href="#testimonials" class="text-brand-blue hover:text-blue-700">Reviews</a>
+                <a href="https://buymeacoffee.com/developersharif/e/345246"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 text-center">
+                    <i class="fa-brands fa-windows"></i> Download Free
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section
+        class="text-center p-8 rounded-xl shadow-2xl brand-blue gradient-overlay w-full max-w-6xl mx-4 mt-24 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 text-left px-6">
+            <span class="text-blue-300 text-sm font-semibold mb-2 block">TRUSTED BY 10,000+ CREATORS</span>
+            <h1 class="text-4xl font-bold mb-6 text-white">Transform Your Screen Recording Experience</h1>
+            <h2 class="text-2xl mb-4 text-white">Zero Lag. Instant Capture. Smart Editing.</h2>
+            <div class="space-y-4 mb-8">
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-blue-300 mr-2"></i>
+                    <p class="text-gray-200">Lightweight & blazing fast capture</p>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-blue-300 mr-2"></i>
+                    <p class="text-gray-200">Build-in screenshot editing suite included</p>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-blue-300 mr-2"></i>
+                    <p class="text-gray-200">100% free, no watermarks</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <a href="https://buymeacoffee.com/developersharif/e/345246"
+                    class="bg-white gap-1 text-brand-blue px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition duration-300 hover-scale inline-flex items-center">
+                    <i class="fa-brands fa-windows"></i> Download Free
+                    <span class="ml-2 text-xs bg-green-500 text-white px-2 py-1 rounded-full">v1.4</span>
+                </a>
+                <a href="#features"
+                    class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition duration-300">
+                    See Features
+                </a>
+            </div>
+
+        </div>
+        <div class="md:w-1/2 mt-8 md:mt-0">
+            <img src="assets/images/easycap-dark.png" alt="EasyCap Interface Screenshot"
+                class="rounded-lg shadow-lg float-animation hover-scale">
+        </div>
+    </section>
+
+    <!-- Added Statistics Section -->
+    <!-- <section class="w-full max-w-6xl mx-4 my-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center p-6 bg-white rounded-lg shadow-md hover-scale">
+                <h3 class="text-3xl font-bold text-brand-blue">10K+</h3>
+                <p class="text-gray-600">Active Users</p>
+            </div>
+            <div class="text-center p-6 bg-white rounded-lg shadow-md hover-scale">
+                <h3 class="text-3xl font-bold text-brand-blue">4.8/5</h3>
+                <p class="text-gray-600">User Rating</p>
+            </div>
+            <div class="text-center p-6 bg-white rounded-lg shadow-md hover-scale">
+                <h3 class="text-3xl font-bold text-brand-blue">100K+</h3>
+                <p class="text-gray-600">Downloads</p>
+            </div>
+            <!-- <div class="text-center p-6 bg-white rounded-lg shadow-md hover-scale">
+                <h3 class="text-3xl font-bold text-brand-blue">24/7</h3>
+                <p class="text-gray-600">Support</p>
+            </div> -->
     </div>
+    </section>
+
+    <section id="features" class="w-full max-w-6xl mx-4 my-16">
+        <div class="text-center mb-12">
+            <span class="text-blue-500 font-semibold">POWERFUL FEATURES</span>
+            <h2 class="text-3xl font-bold mt-2">Everything You Need in One Tool</h2>
+            <p class="text-gray-600 mt-4">Designed for professionals, easy enough for everyone</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6 bg-white rounded-lg shadow-md hover-scale">
+                <div class="bg-blue-50 w-16 h-16 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-video text-blue-500 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Smart Recording</h3>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Zero lag recording technology
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Custom keyboard shortcuts
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Multiple quality presets
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Pause & resume feature
+                    </li>
+                </ul>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-md hover-scale">
+                <div class="bg-blue-50 w-16 h-16 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-camera text-blue-500 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Pro Screenshot Tools</h3>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Smart area selection
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Advanced annotation tools
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        One-click sharing
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Cloud backup option
+                    </li>
+                </ul>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-md hover-scale">
+                <div class="bg-blue-50 w-16 h-16 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-shield-alt text-blue-500 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Security & Privacy</h3>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Local-only storage
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        No account needed
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Data encryption
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Privacy controls
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="text-center p-6">
+        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold text-blue-500">1</span>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Download & Install</h3>
+        <p class="text-gray-600">Download EasyCap and follow the simple installation wizard</p>
+    </div>
+    <div class="text-center p-6">
+        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold text-blue-500">2</span>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Select Area</h3>
+        <p class="text-gray-600">Choose your recording area or screenshot region</p>
+    </div>
+    <div class="text-center p-6">
+        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold text-blue-500">3</span>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Start Recording</h3>
+        <p class="text-gray-600">Hit record and create professional content instantly</p>
+    </div>
+    </div>
+    </section>
+
+    <section id="testimonials" class="w-full max-w-6xl mx-4 my-16">
+        <div class="text-center mb-12">
+            <span class="text-blue-500 font-semibold">TESTIMONIALS</span>
+            <h2 class="text-3xl font-bold mt-2">Loved by Content Creators</h2>
+            <p class="text-gray-600 mt-4">Join thousands of satisfied users worldwide</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6 bg-white rounded-lg shadow-md hover-scale">
+                <div class="flex items-center mb-4">
+
+                    <div>
+                        <p class="font-semibold">Alex Johnson</p>
+                        <p class="text-blue-500">Content Creator</p>
+                    </div>
+                </div>
+                <div class="flex text-yellow-400 mb-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-700">"EasyCap has transformed my content creation workflow. The speed and quality
+                    are unmatched!"</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-md hover-scale">
+                <div class="flex items-center mb-4">
+
+                    <div>
+                        <p class="font-semibold">Sarah Chen</p>
+                        <p class="text-blue-500">Technical Trainer</p>
+                    </div>
+                </div>
+                <div class="flex text-yellow-400 mb-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-700">"Perfect for creating training materials. The editing tools are incredibly
+                    intuitive!"</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-md hover-scale">
+                <div class="flex items-center mb-4">
+
+                    <div>
+                        <p class="font-semibold">Mark Wilson</p>
+                        <p class="text-blue-500">Software Developer</p>
+                    </div>
+                </div>
+                <div class="flex text-yellow-400 mb-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-700">"The lightweight design and quick shortcuts make it perfect for technical
+                    demos!"</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="w-full max-w-6xl mx-4 my-16">
+        <div class="bg-white p-8 rounded-lg shadow-md text-center relative overflow-hidden">
+            <div class="absolute inset-0 gradient-overlay opacity-10"></div>
+            <div class="relative z-10">
+                <span class="text-blue-500 font-semibold">GET STARTED TODAY</span>
+                <h2 class="text-3xl font-bold mb-6 mt-2">Ready to Transform Your Screen Recording?</h2>
+                <p class="text-xl mb-8 text-gray-600">Join thousands of content creators using EasyCap</p>
+                <a href="https://buymeacoffee.com/developersharif/e/345246"
+                    class="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 transition duration-300 inline-flex items-center hover-scale">
+                    <i class="fas fa-download mr-2"></i>
+                    Download Free
+                    <span class="ml-2 text-xs bg-white text-blue-500 px-2 py-1 rounded-full">Windows</span>
+                </a>
+                <div class="mt-6 flex justify-center space-x-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span class="text-gray-600">Windows 7/8/10/11</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span class="text-gray-600">Free Updates</span>
+                    </div>
+                    <!-- <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span class="text-gray-600">24/7 Support</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="w-full bg-gray-900 text-white py-12 mt-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="assets/images/logo.png" alt="EasyCap Logo" class="w-8 h-8 mr-2">
+                        <h3 class="text-xl font-bold">EasyCap</h3>
+                    </div>
+                    <p class="text-gray-400">Powered by RealBrain.cc</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a>
+                        </li>
+                        <!-- <li><a href="#how-it-works" class="text-gray-400 hover:text-white transition-colors">How It
+                                Works</a></li> -->
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Reviews</a>
+                        </li>
+                        <li><a href="#download" class="text-gray-400 hover:text-white transition-colors">Download</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <!-- <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li> -->
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <!-- <li><a href="#" class="text-gray-400 hover:text-white transition-colors">System Status</a></li> -->
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy
+                                Policy</a></li>
+                        <li><a href="/terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of
+                                Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                        <!-- <li><a href="#" class="text-gray-400 hover:text-white transition-colors">GDPR Compliance</a> -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2024 EasyCap. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.onscroll = function () {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollIndicator").style.width = scrolled + "%";
+        };
+
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuIcon = mobileMenuButton.querySelector('i');
+        let isMenuOpen = false;
+
+        mobileMenuButton.addEventListener('click', function () {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('show');
+            mobileMenuIcon.classList.toggle('fa-bars');
+            mobileMenuIcon.classList.toggle('fa-times');
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+                mobileMenuIcon.classList.add('fa-bars');
+                mobileMenuIcon.classList.remove('fa-times');
+                isMenuOpen = false;
+            });
+        });
+
+
+        document.addEventListener('click', function (event) {
+            const isClickInsideMenu = mobileMenu.contains(event.target);
+            const isClickOnButton = mobileMenuButton.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnButton && isMenuOpen) {
+                mobileMenu.classList.remove('show');
+                mobileMenuIcon.classList.add('fa-bars');
+                mobileMenuIcon.classList.remove('fa-times');
+                isMenuOpen = false;
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
