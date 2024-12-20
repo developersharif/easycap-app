@@ -4,6 +4,7 @@
 **The Easiest Way to Record Your Screen and Take Customized Screenshots**  
 
 ---
+![easycap-dark](https://github.com/user-attachments/assets/cdae77b5-0aff-49b5-9473-c72bced866a1)
 
 ## 🎉 Introduction  
 
