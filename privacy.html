@@ -1,86 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | EasyCap - Screen Recording Software</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy policy — EasyCap</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <meta name="description"
-        content="EasyCap's privacy policy outlines how we handle user data, screen recordings, and protect your privacy while using our screen recording software.">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f4f7ff;
-            font-family: 'Inter', sans-serif;
-        }
+        content="How EasyCap handles your data. Recordings and screenshots stay on your device; we never upload or access them.">
+    <meta name="theme-color" content="#080808">
 
-        .brand-blue {
-            color: #1A3B5C;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('easycap-theme');
+                if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+            } catch (e) { }
+        })();
+    </script>
 </head>
 
-<body class="flex flex-col min-h-screen">
-    <!-- Header -->
-    <header class="w-full py-4 bg-white shadow-md">
-        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="assets/images/logo.png" alt="EasyCap Logo" style="
-                width: 35px;
-            " class="mr-2">
-                <a href="/" class="text-2xl font-bold brand-blue">EasyCap</a>
-            </div>
-            <nav>
-                <a href="/" class="text-gray-600 hover:text-gray-900 mx-4">Home</a>
-            </nav>
+<body class="density-comfortable">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+        <div class="wrap inner">
+            <a class="brand" href="/">
+                <img src="assets/images/logo.png" alt="" width="32" height="32">
+                <span class="name">EasyCap</span>
+            </a>
+            <span class="spacer"></span>
+            <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="label">Dark</span>
+            </button>
+            <a class="btn btn-ghost" href="/">Back to home</a>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-4 py-8 max-w-4xl">
-        <h1 class="text-4xl font-bold mb-8 brand-blue">Privacy Policy</h1>
+    <main id="main" class="wrap">
+        <article class="legal">
+            <h1>Privacy policy</h1>
+            <p class="updated">Last updated: 20 December 2024</p>
 
-        <div class="bg-white rounded-lg shadow-md p-8 space-y-6">
+            <nav class="toc" aria-label="On this page">
+                <h2>On this page</h2>
+                <ol>
+                    <li><a href="#collect">Information we collect</a></li>
+                    <li><a href="#use">How we use your information</a></li>
+                    <li><a href="#security">Data security</a></li>
+                    <li><a href="#rights">Your rights</a></li>
+                    <li><a href="#contact">Contact us</a></li>
+                </ol>
+            </nav>
+
             <section>
-                <h2 class="text-2xl font-semibold mb-4">Last Updated: December 20, 2024</h2>
-                <p class="text-gray-600 mb-4">This Privacy Policy describes how EasyCap ("we," "our," or "us") collects,
-                    uses, and protects your information when you use our screen recording software.</p>
+                <p>This privacy policy describes how EasyCap (“we”, “our”, or “us”) collects, uses, and protects your
+                    information when you use our screen recording software.</p>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">Information We Collect</h2>
-                <div class="space-y-4">
-                    <h3 class="text-xl font-medium">1. Screen Recordings and Screenshots</h3>
-                    <p class="text-gray-600">
-                        - All recordings and screenshots are stored locally on your device<br>
-                        - We do not have access to your recordings or screenshots<br>
-                        - Content is never uploaded to our servers unless you explicitly choose to share it
-                    </p>
+            <section id="collect">
+                <h2>Information we collect</h2>
 
-                    <h3 class="text-xl font-medium">2. Application Data</h3>
-                    <p class="text-gray-600">
-                        - Application settings and preferences<br>
-                        - Keyboard shortcut configurations<br>
-                        - Software crash reports (with your consent)
-                    </p>
-                </div>
+                <h3>Screen recordings and screenshots</h3>
+                <ul>
+                    <li>All recordings and screenshots are stored locally on your device</li>
+                    <li>We do not have access to your recordings or screenshots</li>
+                    <li>Content is never uploaded to our servers unless you explicitly choose to share it</li>
+                </ul>
+
+                <h3>Application data</h3>
+                <ul>
+                    <li>Application settings and preferences</li>
+                    <li>Keyboard shortcut configurations</li>
+                    <li>Software crash reports, with your consent</li>
+                </ul>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">How We Use Your Information</h2>
-                <p class="text-gray-600">We use the collected information to:</p>
-                <ul class="list-disc ml-6 text-gray-600">
+            <section id="use">
+                <h2>How we use your information</h2>
+                <p>We use the collected information to:</p>
+                <ul>
                     <li>Provide and maintain the EasyCap software</li>
-                    <li>Improve our software based on crash reports and usage patterns</li>
+                    <li>Improve the software based on crash reports and usage patterns</li>
                     <li>Send important updates and notifications about the software</li>
                     <li>Respond to your support requests</li>
                 </ul>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">Data Security</h2>
-                <p class="text-gray-600">We implement several security measures to protect your data:</p>
-                <ul class="list-disc ml-6 text-gray-600">
+            <section id="security">
+                <h2>Data security</h2>
+                <p>We implement several measures to protect your data:</p>
+                <ul>
                     <li>All recordings are saved directly to your local device</li>
                     <li>No cloud storage or automatic uploading of content</li>
                     <li>Encrypted communication for crash reports and updates</li>
@@ -88,31 +102,53 @@
                 </ul>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">Your Rights</h2>
-                <p class="text-gray-600">You have the right to:</p>
-                <ul class="list-disc ml-6 text-gray-600">
+            <section id="rights">
+                <h2>Your rights</h2>
+                <p>You have the right to:</p>
+                <ul>
                     <li>Access your application settings and data</li>
                     <li>Delete your application data and settings</li>
-                    <li>Opt-out of crash reporting</li>
+                    <li>Opt out of crash reporting</li>
                     <li>Request information about your data</li>
                 </ul>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
-                <p class="text-gray-600">If you have any questions about this Privacy Policy, please contact us at:</p>
-                <p class="text-gray-600">Email: privacy@realbrain.cc</p>
+            <section id="contact">
+                <h2>Contact us</h2>
+                <p>If you have any questions about this privacy policy, email
+                    <a href="mailto:privacy@realbrain.cc">privacy@realbrain.cc</a>.
+                </p>
             </section>
-        </div>
+        </article>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-6 mt-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 EasyCap. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="base">
+                <span>© 2025 EasyCap. All rights reserved.</span>
+                <span><a href="/terms.html">Terms of service</a> · <a href="/">Home</a></span>
+            </div>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            var btn = document.getElementById('themeToggle');
+            var label = btn.querySelector('.label');
+            function paint(isLight) {
+                label.textContent = isLight ? 'Light' : 'Dark';
+                btn.setAttribute('aria-pressed', String(isLight));
+            }
+            paint(document.documentElement.getAttribute('data-theme') === 'light');
+            btn.addEventListener('click', function () {
+                var toLight = document.documentElement.getAttribute('data-theme') !== 'light';
+                if (toLight) document.documentElement.setAttribute('data-theme', 'light');
+                else document.documentElement.removeAttribute('data-theme');
+                try { localStorage.setItem('easycap-theme', toLight ? 'light' : 'dark'); } catch (e) { }
+                paint(toLight);
+            });
+        })();
+    </script>
 </body>
 
 </html>

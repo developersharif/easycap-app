@@ -1,81 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | EasyCap - Screen Recording Software</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terms of service — EasyCap</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <meta name="description"
-        content="EasyCap's terms of service outline the rules, guidelines, and agreements for using our screen recording software.">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f4f7ff;
-            font-family: 'Inter', sans-serif;
-        }
+        content="The rules, guidelines, and agreements for using EasyCap screen recording software.">
+    <meta name="theme-color" content="#080808">
 
-        .brand-blue {
-            color: #1A3B5C;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('easycap-theme');
+                if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+            } catch (e) { }
+        })();
+    </script>
 </head>
 
-<body class="flex flex-col min-h-screen">
-    <!-- Header -->
-    <header class="w-full py-4 bg-white shadow-md">
-        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="assets/images/logo.png" alt="EasyCap Logo" style="
-                width: 35px;
-            " class="mr-2">
-                <a href="/" class="text-2xl font-bold brand-blue">EasyCap</a>
-            </div>
-            <nav>
-                <a href="/" class="text-gray-600 hover:text-gray-900 mx-4">Home</a>
-            </nav>
+<body class="density-comfortable">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+        <div class="wrap inner">
+            <a class="brand" href="/">
+                <img src="assets/images/logo.png" alt="" width="32" height="32">
+                <span class="name">EasyCap</span>
+            </a>
+            <span class="spacer"></span>
+            <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="label">Dark</span>
+            </button>
+            <a class="btn btn-ghost" href="/">Back to home</a>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-4 py-8 max-w-4xl">
-        <h1 class="text-4xl font-bold mb-8 brand-blue">Terms of Service</h1>
+    <main id="main" class="wrap">
+        <article class="legal">
+            <h1>Terms of service</h1>
+            <p class="updated">Last updated: 20 December 2024</p>
 
-        <div class="bg-white rounded-lg shadow-md p-8 space-y-6">
+            <nav class="toc" aria-label="On this page">
+                <h2>On this page</h2>
+                <ol>
+                    <li><a href="#acceptance">Acceptance of terms</a></li>
+                    <li><a href="#license">License and use</a></li>
+                    <li><a href="#responsibilities">User responsibilities</a></li>
+                    <li><a href="#ip">Intellectual property</a></li>
+                    <li><a href="#warranties">Disclaimer of warranties</a></li>
+                    <li><a href="#liability">Limitation of liability</a></li>
+                    <li><a href="#updates">Updates and modifications</a></li>
+                    <li><a href="#termination">Termination</a></li>
+                    <li><a href="#contact">Contact us</a></li>
+                </ol>
+            </nav>
+
             <section>
-                <h2 class="text-2xl font-semibold mb-4">Last Updated: December 20, 2024</h2>
-                <p class="text-gray-600">Please read these Terms of Service carefully before using EasyCap software.</p>
+                <p>Please read these terms of service carefully before using EasyCap software.</p>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
-                <p class="text-gray-600">By downloading, installing, or using EasyCap, you agree to be bound by these
-                    Terms of Service. If you disagree with any part of these terms, you may not use our software.</p>
+            <section id="acceptance">
+                <h2>1. Acceptance of terms</h2>
+                <p>By downloading, installing, or using EasyCap, you agree to be bound by these terms of service. If
+                    you disagree with any part of these terms, you may not use our software.</p>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">2. License and Use</h2>
-                <div class="space-y-4">
-                    <p class="text-gray-600">EasyCap grants you a:</p>
-                    <ul class="list-disc ml-6 text-gray-600">
-                        <li>Personal, non-exclusive, non-transferable license to use the software</li>
-                        <li>Right to use the software for both personal and commercial purposes</li>
-                        <li>Right to install the software on devices you own or control</li>
-                    </ul>
-
-                    <p class="text-gray-600">You may not:</p>
-                    <ul class="list-disc ml-6 text-gray-600">
-                        <li>Modify, reverse engineer, or decompile the software</li>
-                        <li>Distribute or sell the software</li>
-                        <li>Remove any copyright or proprietary notices</li>
-                        <li>Use the software for illegal activities</li>
-                    </ul>
-                </div>
+            <section id="license">
+                <h2>2. License and use</h2>
+                <p>EasyCap grants you a:</p>
+                <ul>
+                    <li>Personal, non-exclusive, non-transferable license to use the software</li>
+                    <li>Right to use the software for both personal and commercial purposes</li>
+                    <li>Right to install the software on devices you own or control</li>
+                </ul>
+                <p>You may not:</p>
+                <ul>
+                    <li>Modify, reverse engineer, or decompile the software</li>
+                    <li>Distribute or sell the software</li>
+                    <li>Remove any copyright or proprietary notices</li>
+                    <li>Use the software for illegal activities</li>
+                </ul>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">3. User Responsibilities</h2>
-                <p class="text-gray-600">You are responsible for:</p>
-                <ul class="list-disc ml-6 text-gray-600">
+            <section id="responsibilities">
+                <h2>3. User responsibilities</h2>
+                <p>You are responsible for:</p>
+                <ul>
                     <li>Obtaining consent before recording others</li>
                     <li>Complying with all applicable laws regarding screen recording</li>
                     <li>Maintaining the security of your device and recordings</li>
@@ -83,62 +99,73 @@
                 </ul>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">4. Intellectual Property</h2>
-                <p class="text-gray-600">
-                    EasyCap and its original content, features, and functionality are owned by RealBrain.cc and are
+            <section id="ip">
+                <h2>4. Intellectual property</h2>
+                <p>EasyCap and its original content, features, and functionality are owned by RealBrain.cc and are
                     protected by international copyright, trademark, patent, trade secret, and other intellectual
-                    property laws.
-                </p>
+                    property laws.</p>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">5. Disclaimer of Warranties</h2>
-                <p class="text-gray-600">
-                    The software is provided "as is" without warranties of any kind, either express or implied. We do
-                    not guarantee that the software will always be safe, secure, or error-free.
-                </p>
+            <section id="warranties">
+                <h2>5. Disclaimer of warranties</h2>
+                <p>The software is provided “as is” without warranties of any kind, either express or implied. We do
+                    not guarantee that the software will always be safe, secure, or error-free.</p>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">6. Limitation of Liability</h2>
-                <p class="text-gray-600">
-                    In no event shall EasyCap or RealBrain.cc be liable for any indirect, incidental, special,
-                    consequential, or punitive damages resulting from your use or inability to use the software.
-                </p>
+            <section id="liability">
+                <h2>6. Limitation of liability</h2>
+                <p>In no event shall EasyCap or RealBrain.cc be liable for any indirect, incidental, special,
+                    consequential, or punitive damages resulting from your use or inability to use the software.</p>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">7. Updates and Modifications</h2>
-                <p class="text-gray-600">
-                    We reserve the right to modify or replace these Terms of Service at any time. We will provide notice
-                    of any significant changes.
-                </p>
+            <section id="updates">
+                <h2>7. Updates and modifications</h2>
+                <p>We reserve the right to modify or replace these terms of service at any time. We will provide
+                    notice of any significant changes.</p>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">8. Termination</h2>
-                <p class="text-gray-600">
-                    We may terminate or suspend your access to the software immediately, without prior notice, for
-                    conduct that we believe violates these Terms of Service.
-                </p>
+            <section id="termination">
+                <h2>8. Termination</h2>
+                <p>We may terminate or suspend your access to the software immediately, without prior notice, for
+                    conduct that we believe violates these terms of service.</p>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
-                <p class="text-gray-600">If you have any questions about these Terms of Service, please contact us at:
+            <section id="contact">
+                <h2>Contact us</h2>
+                <p>If you have any questions about these terms of service, email
+                    <a href="mailto:legal@realbrain.cc">legal@realbrain.cc</a>.
                 </p>
-                <p class="text-gray-600">Email: legal@realbrain.cc</p>
             </section>
-        </div>
+        </article>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-6 mt-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 EasyCap. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="base">
+                <span>© 2025 EasyCap. All rights reserved.</span>
+                <span><a href="/privacy.html">Privacy policy</a> · <a href="/">Home</a></span>
+            </div>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            var btn = document.getElementById('themeToggle');
+            var label = btn.querySelector('.label');
+            function paint(isLight) {
+                label.textContent = isLight ? 'Light' : 'Dark';
+                btn.setAttribute('aria-pressed', String(isLight));
+            }
+            paint(document.documentElement.getAttribute('data-theme') === 'light');
+            btn.addEventListener('click', function () {
+                var toLight = document.documentElement.getAttribute('data-theme') !== 'light';
+                if (toLight) document.documentElement.setAttribute('data-theme', 'light');
+                else document.documentElement.removeAttribute('data-theme');
+                try { localStorage.setItem('easycap-theme', toLight ? 'light' : 'dark'); } catch (e) { }
+                paint(toLight);
+            });
+        })();
+    </script>
 </body>
 
 </html>
